@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@media only screen and (max-width: 600px) {
+  * {
+    padding: 0%;
+    margin: 0%;
+  }
+  body {
+    background: linear-gradient(to left , #47bfdf 0% , #4a91ff 100%);
+  }
+  header {
+    margin: 2.3rem 0rem 5rem;
+  }
+  header .map {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .citymap {
+    display: flex;
+    color: white;
+    flex-direction: row;
+    font-family: 'Roboto', sans-serif;
+    justify-content: space-between;
+    width: 35%;
+  }
+  .citymap img {
+    width: 20%;
+  }
+  .angle-down {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 1.3rem;
+  }
+  .angle-down img {
+    width: 20%;
+    padding: 0%;
+    margin: 0%;
+  }
+  .user {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .user img {
+    width: 35%;
+    border-radius: 50%;
+    margin-left: 25px;
+  }
+  .weather-forecast .weatherImg {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .weatherImg img {
+    width: 50%;
+  }
+  .weather-forecastDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .weather-forecastDetails .detailsCard{
+    height: 285.23px;
+    width: 325.23px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
