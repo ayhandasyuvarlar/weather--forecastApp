@@ -12,13 +12,15 @@ function updateImg() {
 updateImg();
 function addEventList() {
   searchIcon.addEventListener("click", getSearchBox);
-  closeIcon.addEventListener('click' , deleteSearchBox)
+  closeIcon.addEventListener("click", deleteSearchBox);
 }
+addEventList();
 
 function getSearchBox() {
-    searchContent.style.width = '100%'
-    searchContent.style.transition ='1s'
+  searchContent.style.width = "100%";
+  searchContent.style.transition = "1s";
+  searchContent.style.float = "left";
 }
-function deleteSearchBox(){
- searchContent.style.width = '0%'
+function deleteSearchBox() {
+  searchContent.style.width = "0%";
 }
