@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Rubik+Dirt&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 @media only screen and (max-width: 600px) {
   * {
@@ -7,51 +8,64 @@
   }
   body {
     background: linear-gradient(to left, #47bfdf 0%, #4a91ff 100%);
+    width: 380px;
+    overflow: hidden;
   }
   header {
     margin: 2.3rem 0rem 5rem;
   }
-  header .map {
+  header .searchContent {
     margin: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
-  .citymap {
+  header .searchContent .searchbox {
+    position: absolute;
+    width: 0%;
+    height: 3rem;
+    border-bottom: 3px solid #3333;
+    background-color: white;
+  }
+  header .searchContent .searchbox input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+  }
+  header .searchContent .searchbox input :focus {
+    outline: none;
+  }
+  header .searchContent .searchbox img {  
+    position: relative;
+    z-index:10;
+    width: 7%;
+    float: right;
+    padding-right: 10px;
+    margin-top: -35px;
+  }
+  .app-Title {
     display: flex;
     color: white;
     flex-direction: row;
-    font-family: "Roboto", sans-serif;
-    width: 35%;
+    width: 90%;
     align-items: center;
   }
-  .citymap img {
-    width: 25%;
-  }
-  .angle-down {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-height: 1.3rem;
-  }
-  .angle-down img {
-    width: 20%;
-    padding: 0%;
-    margin: 0%;
+
+  .app-Title p {
+    font-family: "Rubik Dirt", cursive;
+    font-size: x-large;
   }
   .searchIcon {
-    width: 30%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
   }
   .searchIcon img {
-    width: 35%;
-    margin-left: 25px;
+    width: 25%;
   }
   .weather-forecast {
     display: flex;
