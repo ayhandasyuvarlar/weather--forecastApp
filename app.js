@@ -1,5 +1,5 @@
-let imageName = document.getElementById("imageName");
 let desc = document.getElementById("desc");
+let imageName = document.getElementById("imageName");
 let searchIcon = document.getElementById("searchIcon");
 let closeIcon = document.getElementById("closeIcon");
 let searchContent = document.getElementById("searchContent");
@@ -15,23 +15,44 @@ const setQuery = (e) => {
 const getResult = (cityName) => {
   let query = `${url}weather?q=${cityName}&appid=${key}&units=metric`;
   fetch(query)
-  .then(response => {
-    return response.json()
-  })
-  .then(displayResult)
+    .then((response) => {
+      return response.json();
+    })
+    .then(displayResult);
 };
 
 const displayResult = (result) => {
-    console.log(result)
-    let city = document.querySelector('.cityName')
-    let temp = document.querySelector('.temp')
-    city.innerText = `${result.name}, ${result.sys.country}`
-    temp.innerHTML = `${result.main.temp} °C` 
-}
-function updateImg() {
-  if (desc.innerText === "r") {
-    imageName.src =
-      "https://yastatic.net/weather/i/icons/funky/dark/ovc_ra.svg";
+  console.log(result);
+  let city = document.querySelector(".cityName");
+  let temp = document.querySelector(".temp");
+  let desc = document.querySelector(".desc");
+  let min = document.querySelector(".minvalue");
+  let max = document.querySelector(".maxvalue");
+  let wind = document.querySelector(".windvalue");
+  let tear = document.querySelector(".tearvalue");
+  //  let minmax = document.querySelector(".minmax");
+  city.innerText = `${result.name}, ${result.sys.country}`;
+  temp.innerText = `${Math.round(result.main.temp)} °C`;
+  desc.innerText = `${result.weather[0].description}`;
+  //   minmax.innerText = `${Math.round(result.main.temp_min)}  °C / ${Math.round(
+  //     result.main.temp_max
+  //   )} °C`;
+  min.innerText = `${Math.round(result.main.temp_min)} °C`;
+  max.innerText = `${Math.round(result.main.temp_max)} °C`;
+  wind.innerText = `${result.wind.speed} km/s`;
+  tear.innerText = `${Math.round(result.main.humidity)}%`;
+
+  updateImg(result.weather[0].description);
+};
+function updateImg(text) {
+  if (text === "clear sky") {
+    imageName.src = "https://yastatic.net/weather/i/icons/funky/dark/skc_d.svg";
+  } else if (text == "scattered clouds") {
+    imageName.src = "https://yastatic.net/weather/i/icons/funky/dark/bkn_d.svg";
+  } else if (text == "broken clouds") {
+    imageName.src = "https://yastatic.net/weather/i/icons/funky/dark/ovc.svg";
+  } else if (text == "few clouds") {
+    imageName.src = "https://yastatic.net/weather/i/icons/funky/dark/skc_d.svg";
   }
 }
 updateImg();
