@@ -7,7 +7,7 @@ function addeventListener() {
 addeventListener();
 
 function getSearchBar() {
-  searchBar.style.width = "414px";
+  searchBar.style.width = "100%";
   searchBar.style.height = "60px";
   searchBar.style.padding = "10px 0px";
   searchBar.style.transition = "2s ";
