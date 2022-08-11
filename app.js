@@ -30,13 +30,11 @@ const displayResult = (result) => {
   let max = document.querySelector(".maxvalue");
   let wind = document.querySelector(".windvalue");
   let tear = document.querySelector(".tearvalue");
-  //  let minmax = document.querySelector(".minmax");
+
   city.innerText = `${result.name}, ${result.sys.country}`;
   temp.innerText = `${Math.round(result.main.temp)} °C`;
   desc.innerText = `${result.weather[0].description}`;
-  //   minmax.innerText = `${Math.round(result.main.temp_min)}  °C / ${Math.round(
-  //     result.main.temp_max
-  //   )} °C`;
+
   min.innerText = `${Math.round(result.main.temp_min)} °C`;
   max.innerText = `${Math.round(result.main.temp_max)} °C`;
   wind.innerText = `${result.wind.speed} km/s`;
