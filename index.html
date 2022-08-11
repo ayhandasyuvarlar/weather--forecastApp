@@ -11,10 +11,10 @@
   <body>
     <header>
       <div class="searchContent">
-       <div class="searchbox" id="searchContent">
-        <input type="text" placeholder="Please enter city" >
-        <img id="closeIcon" src="./img/multiply.svg" alt="">
-       </div>
+        <div class="searchbox" id="searchContent">
+          <input type="text" placeholder="Please enter city" id="searchBar" />
+          <img id="closeIcon" src="./img/multiply.svg" alt="" />
+        </div>
         <div class="app-Title">
           <p>Weather-forecast</p>
         </div>
@@ -24,7 +24,7 @@
       </div>
     </header>
     <section class="weather-forecast">
-      <div class="city"><h1>Gaziantep ,TR</h1></div>
+      <div class="city"><h1 class="cityName">Gaziantep ,TR</h1></div>
       <div class="weatherImg">
         <img
           id="imageName"
@@ -35,12 +35,28 @@
     </section>
     <section class="weather-forecastDetails">
       <div class="detailsCard">
-        <div class="temp">Wednesday, August 8</div>
-        <div class="weatherC">11 °C</div>
+        <div class="days"></div>
+        <div class="temp">11 °C</div>
         <div class="desc" id="desc">Sunny</div>
         <div class="minmax">14 °C / 19 °C</div>
       </div>
     </section>
     <script src="./app.js"></script>
+    <script>
+      var tarih = new Date();
+      var yil = tarih.getFullYear();
+      var ay = tarih.getMonth();
+      var gun = tarih.getDay();
+      var gunler = [
+        " Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        " Friday",
+        "Saturday",
+      ];
+      document.querySelector(".days").innerText = `${gunler[gun]} ${ay} ${yil}`;
+    </script>
   </body>
 </html>
