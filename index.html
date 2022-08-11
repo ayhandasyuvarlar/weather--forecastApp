@@ -38,16 +38,33 @@
         <div class="days"></div>
         <div class="temp">11 °C</div>
         <div class="desc" id="desc">Sunny</div>
-        <div class="minmax">14 °C / 19 °C</div>
+        <div class="weatherDetails">
+          <div class="mindesc">
+            <img src="./img/angle-down.svg" alt="" />
+            <p class="minvalue">14 °C</p>
+          </div>
+          <div class="maxdesc">
+            <img src="./img/angle-up.svg" alt="" />
+            <p class="maxvalue">18 °C</p>
+          </div>
+          <div class="winddesc">
+            <img src="./img/wind.svg" alt="" />
+            <p class="windvalue">2,57 km/s</p>
+          </div>
+          <div class="teardesc">
+            <img src="./img/tear.svg" alt="" />
+            <p class="tearvalue">18%</p>
+          </div>
+        </div>
       </div>
     </section>
     <script src="./app.js"></script>
     <script>
-      var tarih = new Date();
-      var yil = tarih.getFullYear();
-      var ay = tarih.getMonth();
-      var gun = tarih.getDay();
-      var gunler = [
+      let tarih = new Date();
+      let yil = tarih.getFullYear();
+      let ay = tarih.getMonth();
+      let gun = tarih.getDay();
+      let gunler = [
         " Sunday",
         "Monday",
         "Tuesday",

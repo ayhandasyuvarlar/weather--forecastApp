@@ -99,6 +99,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
   .weather-forecastDetails .detailsCard {
     height: 285.23px;
@@ -133,9 +134,51 @@
     font-size: large;
     color: white;
   }
-  .minmax {
-    height: 5%;
-    font-size: large;
+
+  .weatherDetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+  }
+  .weatherDetails .mindesc {
+    width: 35%;
+    display: flex;
+    align-items: center;
     color: white;
   }
+  .mindesc img {
+    width: 30%;
+  }
+  .weatherDetails .maxdesc {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  .maxdesc img {
+    width: 30%;
+  }
+  .weatherDetails .winddesc {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  .winddesc img {
+    width: 18%;
+    padding-right: 5px;
+  }
+  .weatherDetails .teardesc {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  .teardesc img {
+    width: 30%;
+  }
+  
 }
