@@ -12,11 +12,13 @@ function updateImg() {
 updateImg();
 function addEventList() {
   searchIcon.addEventListener("click", getSearchBox);
+  closeIcon.addEventListener('click' , deleteSearchBox)
 }
 
 function getSearchBox() {
     searchContent.style.width = '100%'
     searchContent.style.transition ='1s'
 }
-
-getSearchBox()
+function deleteSearchBox(){
+ searchContent.style.width = '0%'
+}
