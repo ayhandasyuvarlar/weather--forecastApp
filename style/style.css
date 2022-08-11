@@ -84,4 +84,30 @@
     font-family: "Roboto", sans-serif;
     align-items: center;
   }
+  .detailsCard .temp {
+    height: 15%;
+    font-size: large;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .detailsCard .weatherC {
+    height: 30%;
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+  }
+  .desc {
+    height: 10%;
+    font-size: large;
+    color: white;
+  }
+  .minmax {
+    height: 5%;
+    font-size: large;
+    color: white;
+  }
 }
