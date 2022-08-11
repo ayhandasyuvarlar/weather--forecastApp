@@ -45,7 +45,8 @@
     width: 7%;
     float: right;
     padding-right: 10px;
-    margin-top: -55px;
+    margin-top: -5rem;
+    height: 5rem;
   }
   .app-Title {
     display: flex;
@@ -111,7 +112,7 @@
     font-family: "Roboto", sans-serif;
     align-items: center;
   }
-  .detailsCard .temp {
+  .detailsCard .days {
     height: 15%;
     font-size: large;
     color: white;
@@ -119,7 +120,7 @@
     flex-direction: column;
     justify-content: center;
   }
-  .detailsCard .weatherC {
+  .detailsCard .temp{
     height: 30%;
     font-size: 60px;
     color: white;
