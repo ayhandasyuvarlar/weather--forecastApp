@@ -18,8 +18,6 @@
     margin: 10px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
   }
   header .searchContent .searchbox {
     top: 0;
@@ -34,6 +32,9 @@
     height: 100%;
     background-color: transparent;
     border: none;
+    font-size: x-large;
+    color: gainsboro;
+    font-family: "Rubik Dirt", cursive;
   }
   header .searchContent .searchbox input :focus {
     outline: none;
