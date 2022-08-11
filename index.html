@@ -10,12 +10,16 @@
 </head>
 <body>
   <header>
+    <div class="searchbar" id="searchbar">
+      <p>Please City Enter ..</p>
+      <input type="text">
+    </div>
     <div class="map">
         <div class="citymap">
             <img src="./img/map-marker.svg" alt="">
             <p>Gaziantep</p>
         </div>
-        <div class="angle-down">
+        <div class="angle-down" id="angleDown">
             <img src="./img/angle-down.svg" alt="">
         </div>
         <div class="user">
@@ -25,11 +29,19 @@
   </header>
   <section class="weather-forecast">
        <div class="weatherImg">
-        <img src="./img/cloud-sun.svg" alt="">
+        <img src="https://yastatic.net/weather/i/icons/funky/dark/bkn_d.svg" alt="">
        </div>
   </section>
   <section class="weather-forecastDetails">
-    <div class="detailsCard"></div>
+    <div class="detailsCard">
+      <div class="days">
+        Wednesday, August 8
+      </div>
+      <div class="weatherC">
+        11 °C 
+      </div>
+    </div>
   </section>
+  <script src="./app.js"></script>
 </body>
 </html>
