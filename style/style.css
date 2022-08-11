@@ -1,15 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 @media only screen and (max-width: 600px) {
   * {
     padding: 0%;
     margin: 0%;
   }
   body {
-    background: linear-gradient(to left , #47bfdf 0% , #4a91ff 100%);
+    background: linear-gradient(to left, #47bfdf 0%, #4a91ff 100%);
   }
   header {
     margin: 2.3rem 0rem 5rem;
+  }
+  header .searchbar {
+    margin-top: -2.3rem;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  .searchbar p {
+    width: 82%;
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    margin: 0%;
+    padding: 0%;
+  }
+  .searchbar input {
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    padding: 10px 5px;
   }
   header .map {
     margin: 10px;
@@ -22,7 +47,7 @@
     display: flex;
     color: white;
     flex-direction: row;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     justify-content: space-between;
     width: 35%;
   }
@@ -72,10 +97,16 @@
     justify-content: center;
     align-items: center;
   }
-  .weather-forecastDetails .detailsCard{
+  .weather-forecastDetails .detailsCard {
     height: 285.23px;
     width: 325.23px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
+    background-image: url(https://idsb.tmgrup.com.tr/ly/uploads/images/2021/04/04/thumbs/800x531/105152.jpg?v=16175382140);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
