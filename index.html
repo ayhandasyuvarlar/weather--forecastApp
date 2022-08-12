@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
-
     <title>Weather-forecast</title>
   </head>
   <body>
@@ -58,7 +57,7 @@
         </div>
       </div>
     </section>
-    <script src="./app.js"></script>
+   
     <script>
       let date = new Date();
       let year = date.getFullYear();
@@ -73,10 +72,14 @@
         " Friday",
         "Saturday",
       ];
-      let months = [1,2,3,4,5,6,7,8,9,10,11,12]
+      let months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
       document.querySelector(
         ".days"
       ).innerText = `${days[day]} ${months[month]} ${year}`;
     </script>
+     <script src="/app.js"></script>
+     <script src="./src/ui.js"></script>
+     <script src="./src/imperatives.js"></script>
   </body>
+  
 </html>

@@ -15,7 +15,6 @@
     margin: 2.3rem 0rem 5rem;
   }
   header .searchContent {
-    margin: 10px;
     display: flex;
     flex-direction: row;
   }
@@ -24,7 +23,6 @@
     position: absolute;
     width: 0%;
     height: 5rem;
-    border-bottom: 3px solid #3333;
     background-color: white;
   }
   header .searchContent .searchbox input {
@@ -99,11 +97,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 10px;
     
   }
   .weather-forecastDetails .detailsCard {
     height: 285.23px;
-    width: 325.23px;
+    width: 90%;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
     background-size: cover;
@@ -144,7 +143,7 @@
     padding: 15px;
   }
   .weatherDetails .mindesc {
-    width: 35%;
+    width: 40%;
     display: flex;
     align-items: center;
     color: white;
@@ -153,7 +152,7 @@
     width: 30%;
   }
   .weatherDetails .maxdesc {
-    width: 35%;
+    width: 40%;
     display: flex;
     align-items: center;
     color: white;
@@ -162,7 +161,7 @@
     width: 30%;
   }
   .weatherDetails .winddesc {
-    width: 50%;
+    width: 49%;
     display: flex;
     align-items: center;
     color: white;
