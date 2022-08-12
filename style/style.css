@@ -8,8 +8,6 @@
   }
   body {
     background: linear-gradient(to left, #47bfdf 0%, #4a91ff 100%);
-    width: 380px;
-    overflow: hidden;
   }
   header {
     margin: 2.3rem 0rem 5rem;
@@ -180,4 +178,7 @@
     width: 30%;
   }
   
+}
+@media only screen and (max-width: 325px) {
+
 }
