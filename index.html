@@ -24,7 +24,7 @@
       </div>
     </header>
     <section class="weather-forecast">
-      <div class="city"><h1 class="cityName">Gaziantep ,TR</h1></div>
+      <div class="city"><h1 class="cityName">-------</h1></div>
       <div class="weatherImg">
         <img
           id="imageName"
@@ -36,35 +36,35 @@
     <section class="weather-forecastDetails">
       <div class="detailsCard">
         <div class="days"></div>
-        <div class="temp">11 °C</div>
-        <div class="desc" id="desc">Sunny</div>
+        <div class="temp">-------</div>
+        <div class="desc" id="desc">-------</div>
         <div class="weatherDetails">
           <div class="mindesc">
             <img src="./img/angle-down.svg" alt="" />
-            <p class="minvalue">14 °C</p>
+            <p class="minvalue">-------</p>
           </div>
           <div class="maxdesc">
             <img src="./img/angle-up.svg" alt="" />
-            <p class="maxvalue">18 °C</p>
+            <p class="maxvalue">-------</p>
           </div>
           <div class="winddesc">
             <img src="./img/wind.svg" alt="" />
-            <p class="windvalue">2,57 km/s</p>
+            <p class="windvalue">-------</p>
           </div>
           <div class="teardesc">
             <img src="./img/tear.svg" alt="" />
-            <p class="tearvalue">18%</p>
+            <p class="tearvalue">-------</p>
           </div>
         </div>
       </div>
     </section>
     <script src="./app.js"></script>
     <script>
-      let tarih = new Date();
-      let yil = tarih.getFullYear();
-      let ay = tarih.getMonth();
-      let gun = tarih.getDay();
-      let gunler = [
+      let date = new Date();
+      let year = date.getFullYear();
+      let month = date.getMonth();
+      let day = date.getDay();
+      let days = [
         " Sunday",
         "Monday",
         "Tuesday",
@@ -73,7 +73,10 @@
         " Friday",
         "Saturday",
       ];
-      document.querySelector(".days").innerText = `${gunler[gun]} ${ay} ${yil}`;
+      let months = [1,2,3,4,5,6,7,8,9,10,11,12]
+      document.querySelector(
+        ".days"
+      ).innerText = `${days[day]} ${months[month]} ${year}`;
     </script>
   </body>
 </html>
