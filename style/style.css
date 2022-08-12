@@ -72,7 +72,12 @@
     justify-content: center;
     align-items: center;
   }
+  .city {
+    width: 100%;
+    text-align: center;
+  }
   .weather-forecast .city h1 {
+    width: 100%;
     font-family: "Roboto", sans-serif;
     color: white;
     font-size: 30px;
@@ -204,15 +209,14 @@
     width: 20%;
   }
   .weather-forecast .city h1 {
-
     font-size: 25px;
   }
   .weather-forecastDetails {
     display: flex;
     flex-direction: column;
-    justify-content:first baseline;
-    align-items:center;
-    padding-bottom:40px;
+    justify-content: first baseline;
+    align-items: center;
+    padding-bottom: 40px;
     height: 15rem;
   }
 }
