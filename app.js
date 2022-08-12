@@ -10,6 +10,7 @@ const searchIcon = document.getElementById("searchIcon");
 const closeIcon = document.getElementById("closeIcon");
 const searchContent = document.getElementById("searchContent");
 const searchBar = document.getElementById("searchBar");
+const body = document.getElementById("body");
 const url = "https://api.openweathermap.org/data/2.5/";
 const key = "45c9fd503cc5ddd3023a83eea837cb25";
 
@@ -21,7 +22,7 @@ const setQuery = (e) => {
 const getResult = (cityName) => {
   if (cityName === "") {
     searchContent.style.background = "darkred";
-    searchContent.placeholder = 'lutfen doldurun'
+    searchContent.placeholder = "lutfen doldurun";
     setTimeout(() => {
       searchContent.style.background = "white";
     }, 1000);
@@ -50,6 +51,7 @@ const displayResult = (result) => {
   wind.innerText = `${result.wind.speed} km/s`;
   tear.innerText = `${Math.round(result.main.humidity)}%`;
   updateImg(result.weather[0].description);
+  // countryController(result.sys.country);
   searchBar.value = "";
   searchContent.style.width = "0px";
 };
@@ -69,6 +71,20 @@ const updateImg = (text) => {
     imageName.src = "https://yastatic.net/weather/i/icons/funky/dark/ovc.svg";
   }
 };
+
+// const countryController = (country) => {
+//   if (country === "TR") {
+//     body.style.background =
+//       "url(http://tmbh.org.mk/wp-content/uploads/2014/04/t%C3%BCrk-bayra%C4%9F%C4%B1-duvar-ka%C4%9F%C4%B1d%C4%B1.jpg) ";
+//     body.style.backgroundSize = "850px";
+//     body.style.backgroundPosition = "50% 100%";
+//     body.style.transition = '1s all'
+//     setTimeout(() => {
+//       body.style.background =
+//         "linear-gradient(to left, #47bfdf 0%, #4a91ff 100%)";
+//     }, 3000);
+//   }
+// };
 function addEventList() {
   searchIcon.addEventListener("click", getSearchBox);
   closeIcon.addEventListener("click", deleteSearchBox);
