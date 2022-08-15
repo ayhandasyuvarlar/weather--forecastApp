@@ -102,6 +102,9 @@ const updateImg = (text) => {
   else if (text === 'light rain'){
     imageName.src= 'https://yastatic.net/weather/i/icons/funky/dark/bkn_+ra_d.svg'
   }
+  else if (text === 'light intensity shower rain'){
+    imageName.src= 'https://yastatic.net/weather/i/icons/funky/dark/bkn_+ra_d.svg'
+  }
 };
 
 
