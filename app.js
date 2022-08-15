@@ -60,6 +60,7 @@ const getResultTwo = (cityName) => {
 };
 
 const displayResult = (result) => {
+  console.log(result);
   city.innerText = `${result.name} , ${result.sys.country}`;
   temp.innerText = `${Math.round(result.main.temp)} °C`;
   desc.innerText = `${result.weather[0].description}`;
@@ -112,25 +113,26 @@ function deleteSearchBox() {
 }
 
 const displayResultTwo = (result) => {
-  console.log(result.list[0])
+  console.log(result.list[0]);
   const swiperContent = document.querySelector(".swiper-wrapper");
-swiperContent.innerHTML = result.list.map((day , idx) =>{
-  if(idx <= 2){
-    return `<div class="swiper-slide">
+  swiperContent.innerHTML = result.list
+    .map((day, idx) => {
+      if (idx <= 2) {
+        return `<div class="swiper-slide">
     <div class="content">
-      <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt=""  class="days"/>
+      <img src="https://openweathermap.org/img/wn/${
+        day.weather[0].icon
+      }@2x.png" alt=""  class="days"/>
     </div>
-    <div class="bottom">
-      <div class="desc">${day.main.temp} °C</div>
+    <div class="bottom"> 
+      <div class="desc"> --- °C</div>
       <div class="title">${day.weather[0].description}</div>
       <div class="date">
               ${day.dt_txt} 
       </div>
     </div>
-    </div>`
-  }
-}).join('')
+    </div>`;
+      }
+    })
+    .join("");
 };
-
-
-
