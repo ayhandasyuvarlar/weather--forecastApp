@@ -12,14 +12,13 @@ const searchContent = document.getElementById("searchContent");
 const searchBar = document.getElementById("searchBar");
 const body = document.getElementById("body");
 const url = "https://api.openweathermap.org/data/2.5/";
-const urlTwo = 'api.openweathermap.org/data/2.5/forecast/'
+const urlTwo = "https://api.openweathermap.org/data/2.5/";
 const key = "45c9fd503cc5ddd3023a83eea837cb25";
-let user = 's'
 
 const setQuery = (e) => {
   if (e.keyCode == "13") {
     getResult(searchBar.value);
-    getResultTwo(searchBar.value)
+    getResultTwo(searchBar.value);
   }
 };
 
@@ -38,37 +37,30 @@ const getResult = (cityName) => {
       .then((response) => {
         return response.json();
       })
-      .then(result =>{
-        if(result ===' country'){
-          console.log(undefined)
-        }
-        else{
-          displayResult(result)
-        }
+      .then((result) => {
+        displayResult(result);
       })
       .catch((err) => {
         console.log(err);
       });
   }
 };
-const getResultTwo = (cityName) =>{
-   let cnt = 16
-   let query = `${urlTwo}daily?q=${cityName}&cnt=${cnt}&appid=${key}`
-   fetch(query)
-      .then((response) => {
-        return response.json();
-      })
-      .then(result =>{ 
-      displayResultTwo(result)
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
+const getResultTwo = (cityName) => {
+  let query = `${urlTwo}forecast?q=${cityName}&appid=${key}`;
+  fetch(query)
+    .then((response) => {
+      return response.json();
+    })
+    .then((result) => {
+      displayResultTwo(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 const displayResult = (result) => {
-  city.innerText = `${result.name}, ${result.sys.country}`;
+  city.innerText = `${result.name} , ${result.sys.country}`;
   temp.innerText = `${Math.round(result.main.temp)} °C`;
   desc.innerText = `${result.weather[0].description}`;
 
@@ -77,13 +69,10 @@ const displayResult = (result) => {
   wind.innerText = `${result.wind.speed} km/s`;
   tear.innerText = `${Math.round(result.main.humidity)}%`;
   updateImg(result.weather[0].description);
-  // countryController(result.sys.country);
   searchBar.value = "";
   searchContent.style.width = "0px";
 };
-const displayResultTwo = (result) =>{
-   console.log(result)
-}
+
 const updateImg = (text) => {
   if (text === "clear sky") {
     imageName.src = "https://yastatic.net/weather/i/icons/funky/dark/skc_d.svg";
@@ -98,16 +87,14 @@ const updateImg = (text) => {
       "https://yastatic.net/weather/i/icons/funky/dark/bkn_ra_d.svg";
   } else if (text == "overcast clouds") {
     imageName.src = "https://yastatic.net/weather/i/icons/funky/dark/ovc.svg";
-  }
-  else if (text === 'light rain'){
-    imageName.src= 'https://yastatic.net/weather/i/icons/funky/dark/bkn_+ra_d.svg'
-  }
-  else if (text === 'light intensity shower rain'){
-    imageName.src= 'https://yastatic.net/weather/i/icons/funky/dark/bkn_+ra_d.svg'
+  } else if (text === "light rain") {
+    imageName.src =
+      "https://yastatic.net/weather/i/icons/funky/dark/bkn_+ra_d.svg";
+  } else if (text === "light intensity shower rain") {
+    imageName.src =
+      "https://yastatic.net/weather/i/icons/funky/dark/bkn_+ra_d.svg";
   }
 };
-
-
 
 function addEventList() {
   searchIcon.addEventListener("click", getSearchBox);
@@ -123,18 +110,27 @@ function getSearchBox() {
 function deleteSearchBox() {
   searchContent.style.width = "0px";
 }
-function hoursController(){
-  let date = new Date();
-  let hours = date.getHours()
-  if(hours === 6 ||hours === 7 ||hours === 8 || hours === 9 ||  hours === 10 || hours === 11){
-     document.querySelector('.loginUser').innerText = `Welcome , Good Morning `
+
+const displayResultTwo = (result) => {
+  console.log(result.list[0])
+  const swiperContent = document.querySelector(".swiper-wrapper");
+swiperContent.innerHTML = result.list.map((day , idx) =>{
+  if(idx <= 2){
+    return `<div class="swiper-slide">
+    <div class="content">
+      <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt=""  class="days"/>
+    </div>
+    <div class="bottom">
+      <div class="desc">${day.main.temp} °C</div>
+      <div class="title">${day.weather[0].description}</div>
+      <div class="date">
+              ${day.dt_txt} 
+      </div>
+    </div>
+    </div>`
   }
-  else if ( hours === 12 || hours === 13|| hours === 14|| hours === 15|| hours === 16|| hours === 17){
-    document.querySelector('.loginUser').innerText = `Welcome , Good Day`
-  }
-  else if(hours === 18|| hours === 19|| hours === 20|| hours === 21|| hours === 22|| hours === 23){
-    document.querySelector('.loginUser').innerText = `Welcome , Good Night`
-  }
-  
-}
-hoursController() 
+}).join('')
+};
+
+
+

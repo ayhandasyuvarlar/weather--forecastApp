@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
     <title>Weather-forecast</title>
   </head>
   <body id="body">
@@ -57,27 +62,48 @@
           </div>
         </div>
       </div>
+      <div class="swiper product-card">
+        <div class="swiper-wrapper">
+          
+        </div>
+        <div class="button-p">
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16.6464 13.6464C16.8417 13.4512 17.1583 13.4512 17.3536 13.6464L23.3536 19.6464C23.5488 19.8417 23.5488 20.1583 23.3536 20.3536L17.3536 26.3536C17.1583 26.5488 16.8417 26.5488 16.6464 26.3536C16.4512 26.1583 16.4512 25.8417 16.6464 25.6464L22.2929 20L16.6464 14.3536C16.4512 14.1583 16.4512 13.8417 16.6464 13.6464Z"
+              fill="black"
+            />
+            <rect
+              x="0.5"
+              y="0.5"
+              width="39"
+              height="39"
+              stroke="black"
+              stroke-opacity="0.1"
+            />
+          </svg>
+        </div>
+      </div>
     </section>
-
-    <script>
-      let date = new Date();
-      let year = date.getFullYear();
-      let month = date.getMonth();
-      let day = date.getDay();
-      let days = [
-        " Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        " Friday",
-        "Saturday",
-      ];
-      let months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-      document.querySelector(
-        ".days"
-      ).innerText = `${days[day]} ${months[month]} ${year}`;
-    </script>
     <script src="./app.js"></script>
+    <script src="./date.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      let swiper = new Swiper(".product-card", {
+        slidesPerView: "auto",
+        spaceBetween: 32,
+        freeMode: true,
+        navigation: {
+          nextEl: ".button-p",
+        },
+      });
+    </script>
   </body>
 </html>
