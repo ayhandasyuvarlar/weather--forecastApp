@@ -94,6 +94,9 @@ const updateImg = (text) => {
   } else if (text === "light intensity shower rain") {
     imageName.src =
       "https://yastatic.net/weather/i/icons/funky/dark/bkn_+ra_d.svg";
+  } else if (text === " moderate rain") {
+    imageName.src =
+      "https://yastatic.net/weather/i/icons/funky/dark/bkn_+ra_d.svg";
   }
 };
 
@@ -117,12 +120,10 @@ const displayResultTwo = (result) => {
   const swiperContent = document.querySelector(".swiper-wrapper");
   swiperContent.innerHTML = result.list
     .map((day, idx) => {
-      if (idx <= 2) {
+      if (idx <= 5) {
         return `<div class="swiper-slide">
     <div class="content">
-      <img src="https://openweathermap.org/img/wn/${
-        day.weather[0].icon
-      }@2x.png" alt=""  class="days"/>
+      <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt=""  class="days"/>
     </div>
     <div class="bottom"> 
       <div class="desc"> --- °C</div>
