@@ -23,6 +23,7 @@
       </div>
     </header>
     <section class="weather-forecast">
+      <div class="loginUser"></div>
       <div class="city"><h1 class="cityName">-------</h1></div>
       <div class="weatherImg">
         <img
@@ -57,7 +58,7 @@
         </div>
       </div>
     </section>
-   
+
     <script>
       let date = new Date();
       let year = date.getFullYear();
@@ -77,9 +78,6 @@
         ".days"
       ).innerText = `${days[day]} ${months[month]} ${year}`;
     </script>
-     <script src="/app.js"></script>
-     <script src="./src/ui.js"></script>
-     <script src="./src/imperatives.js"></script>
+    <script src="./app.js"></script>
   </body>
-  
 </html>

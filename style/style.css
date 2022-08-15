@@ -7,7 +7,7 @@
     margin: 0%;
   }
   body {
-    background: linear-gradient(to left, #47bfdf 0%, #4a91ff 100%);
+    background-color:  #09203f
   }
   header {
     margin: 1rem 0rem 5rem;
@@ -49,6 +49,7 @@
     color: white;
     flex-direction: row;
     width: 90%;
+    padding: 5px ;
     align-items: center;
   }
 
@@ -62,6 +63,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    padding: 5px;
+
   }
   .searchIcon img {
     width: 25%;
@@ -71,6 +74,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .loginUser {
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 10px;
   }
   .city {
     width: 100%;
@@ -83,14 +94,13 @@
     font-size: 30px;
   }
   .weather-forecast .weatherImg {
-    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 10px;
     align-items: center;
-    margin-bottom: 40px;
     width: 35%;
+    margin-top: 35px;
+  
   }
   .weatherImg img {
     width: 100%;
@@ -106,7 +116,7 @@
     height: 285.23px;
     width: 90%;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: #09203f77;
     background-size: cover;
     display: flex;
     flex-direction: column;

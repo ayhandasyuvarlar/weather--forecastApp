@@ -12,13 +12,17 @@ const searchContent = document.getElementById("searchContent");
 const searchBar = document.getElementById("searchBar");
 const body = document.getElementById("body");
 const url = "https://api.openweathermap.org/data/2.5/";
+const urlTwo = 'api.openweathermap.org/data/2.5/forecast/'
 const key = "45c9fd503cc5ddd3023a83eea837cb25";
+let user = 's'
 
 const setQuery = (e) => {
   if (e.keyCode == "13") {
     getResult(searchBar.value);
+    getResultTwo(searchBar.value)
   }
 };
+
 const getResult = (cityName) => {
   if (cityName === "") {
     searchContent.style.background = "darkred";
@@ -27,19 +31,41 @@ const getResult = (cityName) => {
       searchContent.style.background = "white";
     }, 1000);
   } else if (cityName === null) {
-    console.log("bos deger birakma");
+    console.log("plesaa enter value");
   } else {
     let query = `${url}weather?q=${cityName}&appid=${key}&units=metric`;
     fetch(query)
       .then((response) => {
         return response.json();
       })
-      .then(displayResult)
+      .then(result =>{
+        if(result ===' country'){
+          console.log(undefined)
+        }
+        else{
+          displayResult(result)
+        }
+      })
       .catch((err) => {
         console.log(err);
       });
   }
 };
+const getResultTwo = (cityName) =>{
+   let cnt = 16
+   let query = `${urlTwo}daily?q=${cityName}&cnt=${cnt}&appid=${key}`
+   fetch(query)
+      .then((response) => {
+        return response.json();
+      })
+      .then(result =>{ 
+      displayResultTwo(result)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
 
 const displayResult = (result) => {
   city.innerText = `${result.name}, ${result.sys.country}`;
@@ -55,6 +81,9 @@ const displayResult = (result) => {
   searchBar.value = "";
   searchContent.style.width = "0px";
 };
+const displayResultTwo = (result) =>{
+   console.log(result)
+}
 const updateImg = (text) => {
   if (text === "clear sky") {
     imageName.src = "https://yastatic.net/weather/i/icons/funky/dark/skc_d.svg";
@@ -70,21 +99,13 @@ const updateImg = (text) => {
   } else if (text == "overcast clouds") {
     imageName.src = "https://yastatic.net/weather/i/icons/funky/dark/ovc.svg";
   }
+  else if (text === 'light rain'){
+    imageName.src= 'https://yastatic.net/weather/i/icons/funky/dark/bkn_+ra_d.svg'
+  }
 };
 
-// const countryController = (country) => {
-//   if (country === "TR") {
-//     body.style.background =
-//       "url(http://tmbh.org.mk/wp-content/uploads/2014/04/t%C3%BCrk-bayra%C4%9F%C4%B1-duvar-ka%C4%9F%C4%B1d%C4%B1.jpg) ";
-//     body.style.backgroundSize = "850px";
-//     body.style.backgroundPosition = "50% 100%";
-//     body.style.transition = '1s all'
-//     setTimeout(() => {
-//       body.style.background =
-//         "linear-gradient(to left, #47bfdf 0%, #4a91ff 100%)";
-//     }, 3000);
-//   }
-// };
+
+
 function addEventList() {
   searchIcon.addEventListener("click", getSearchBox);
   closeIcon.addEventListener("click", deleteSearchBox);
@@ -99,3 +120,18 @@ function getSearchBox() {
 function deleteSearchBox() {
   searchContent.style.width = "0px";
 }
+function hoursController(){
+  let date = new Date();
+  let hours = date.getHours()
+  if(hours === 6 ||hours === 7 ||hours === 8 || hours === 9 ||  hours === 10 || hours === 11){
+     document.querySelector('.loginUser').innerText = `Welcome , Good Morning `
+  }
+  else if ( hours === 12 || hours === 13|| hours === 14|| hours === 15|| hours === 16|| hours === 17){
+    document.querySelector('.loginUser').innerText = `Welcome , Good Day`
+  }
+  else if(hours === 18|| hours === 19|| hours === 20|| hours === 21|| hours === 22|| hours === 23){
+    document.querySelector('.loginUser').innerText = `Welcome , Good Night`
+  }
+  
+}
+hoursController() 
